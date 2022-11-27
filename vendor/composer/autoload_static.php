@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc26409e58aec7e5ce7c8a414172df025
+class ComposerStaticInit5f634fe356eb064190553e859855ef15
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -340,8 +340,8 @@ class ComposerStaticInitc26409e58aec7e5ce7c8a414172df025
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -623,6 +623,7 @@ class ComposerStaticInitc26409e58aec7e5ce7c8a414172df025
         'Carbon\\Traits\\Serialization' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Serialization.php',
         'Carbon\\Traits\\Test' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Test.php',
         'Carbon\\Traits\\Timestamp' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Timestamp.php',
+        'Carbon\\Traits\\ToStringFormat' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/ToStringFormat.php',
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
@@ -2505,6 +2506,7 @@ class ComposerStaticInitc26409e58aec7e5ce7c8a414172df025
         'Illuminate\\Support\\ItemNotFoundException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/ItemNotFoundException.php',
         'Illuminate\\Support\\Js' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Js.php',
         'Illuminate\\Support\\LazyCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/LazyCollection.php',
+        'Illuminate\\Support\\Lottery' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Lottery.php',
         'Illuminate\\Support\\Manager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Manager.php',
         'Illuminate\\Support\\MessageBag' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/MessageBag.php',
         'Illuminate\\Support\\MultipleInstanceManager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/MultipleInstanceManager.php',
@@ -5677,10 +5679,10 @@ class ComposerStaticInitc26409e58aec7e5ce7c8a414172df025
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc26409e58aec7e5ce7c8a414172df025::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc26409e58aec7e5ce7c8a414172df025::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc26409e58aec7e5ce7c8a414172df025::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc26409e58aec7e5ce7c8a414172df025::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5f634fe356eb064190553e859855ef15::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5f634fe356eb064190553e859855ef15::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5f634fe356eb064190553e859855ef15::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5f634fe356eb064190553e859855ef15::$classMap;
 
         }, null, ClassLoader::class);
     }

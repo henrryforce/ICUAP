@@ -98,8 +98,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   
-                   <form method="POST" action="{{route('altaUsaurio')}}" novalidate>
+                   <div id="validarErrores"> </div>
+                   <form method="POST" id="formAltaUser" action="{{route('altaUsaurio')}}" novalidate>
                     @csrf
                     <div class="mb-5">
                         <label for="user" class="mb-2 block uppercase text-gray-500 font-bold">Usuario</label>
@@ -123,7 +123,7 @@
                         <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Repite tu password" class="border w-full p-3 rounded-lg @error('name') border-red-500 @enderror"
                         value="{{old('password_confirmation')}}">
                     </div>
-                    <input type="submit" value="Crear Cuenta" class="bg-sky-600 hover:bg-sky700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
+                    <input type="button" id="btnAltaUser" value="Crear Cuenta" class="bg-sky-600 hover:bg-sky700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
                   </form>     
                         
                 </div><!-- Fin modal body -->
