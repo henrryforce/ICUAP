@@ -10,6 +10,6 @@ class AdministracionController extends Controller
         $this->middleware('auth');
     } 
     public function index(){
-        return view('menuAdministracion');
+        return view('auth.menuAdministracion');
     }
 }
