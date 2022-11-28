@@ -31,7 +31,19 @@
         <nav class="menu">	
           <a href="{{route('index')}}">Inicio</a>
           <a href="#contacto">Contacto</a>	
-          <a href="{{route('login')}}">Iniciar sesión</a>	
+          @guest
+            <a href="{{route('login')}}">Iniciar sesión</a>	
+          @endguest
+          @auth
+          
+          <form method="POST" action="{{route('logout')}}">
+            @csrf
+            <button type="submit">
+              <a >Cerrar sesión</a>	
+            </button>
+            
+        </form>
+          @endauth
         </nav>
     </section>
   </header>

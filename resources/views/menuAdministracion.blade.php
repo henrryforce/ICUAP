@@ -15,7 +15,14 @@
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear-fill"></i>Configuración </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-person-fill"></i>Perfil </a>
                 <div class="nav-item-divider"></div>
-                <a href="index.html" class="dashboard-nav-item"><i class="bi bi-box-arrow-right"></i> Logout </a>
+                <form method="POST" action="{{route('logout')}}">
+                    @csrf
+                    <button type="submit">
+                        <a class="dashboard-nav-item"><i class="bi bi-box-arrow-right"></i> Logout </a>
+                    </button>
+                    
+                </form>
+                
             </nav>
         </div>
         <div class='dashboard-app'>
