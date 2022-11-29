@@ -3,9 +3,9 @@
 @section('contenido')
       <div class="alert alert-danger w-50" role="alert">
         <h4 class="alert-heading">Ecosistema de Investigacion ICUAP</h4>
-        <p>
         <p class="mb-0">Este acceso es exclusivo para la administración del sitio, si no cuentas con las credenciales necesarias, deberas regresar a la pantalla de inicio.</p>
       </div>
+      <div id="relleno-nav"></div>
       <div class="contenedor register-form">
         <div class="card bg-light">
           <article class="card-body mx-auto" style="max-width: 400px;">
@@ -34,9 +34,7 @@
                 </div>
                 @enderror
               </div>
-              <div class="mb-5">
-                <input type="checkbox" name="remember"> <label class="mb-2  text-sm text-gray-500 ">Mantener mi Sesion Abierta</label>
-            </div>                       
+                <input type="checkbox" name="remember"> <label class="mb-2  text-sm text-gray-500 ">Mantener mi Sesion Abierta</label>                       
               <div class="form-group col text-center">
                   <button type="submit" class="botn btn-block" href="menu.html">Iniciar sesión </button>
               </div> <!-- form-group// -->  
