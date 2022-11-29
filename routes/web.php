@@ -28,4 +28,5 @@ Route::post('/register', [RegisterController::class,'store'])->name('altaUsaurio
 Route::get('/administracion', [AdministracionController::class,'index'])->name('administracion');
 Route::get('/administracion/investigador/detalles', function () {return view('auth.detalles_investigador');})->name('investigador.detalles');
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
+Route::get('/vista_usuarios', function () {return view('vista_usuarios');})->name('usuarios');
 
