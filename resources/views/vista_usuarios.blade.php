@@ -20,7 +20,6 @@
     </div>
 </div>
 <div id="relleno"></div>
-
 <div class="contenedor flex justify-between">
     <div style="width: 600px; margin: auto;">
         <canvas id="myChart"></canvas>
@@ -29,6 +28,5 @@
         <canvas id="myChart2"></canvas>
     </div>
 </div>
-    
 <div id="relleno"></div>
 @endsection
