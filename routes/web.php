@@ -30,4 +30,4 @@ Route::get('/administracion/investigador/detalles', function () {return view('au
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
 Route::get('/vista_usuarios', function () {return view('vista_usuarios');})->name('usuarios');
 Route::get('/listado_investigadores', function () {return view('listado_investigadores');})->name('investigadores');
-Route::get('/lista_usuarios', function () {return view('lista_usuarios');})->name('usuarios');
+Route::get('/lista_usuarios', function () {return view('lista_usuarios');})->name('lista_usuarios');
