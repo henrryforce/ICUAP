@@ -1,53 +1,30 @@
 @extends('layouts.app')
 @section('contenido')
-<div id="relleno-nav"></div>
-<h1 class="font-black text-5xl text-center md:w-2/3 mx-auto">Lista de usuarios</h1>
-<div id="relleno"></div>
-<div class="flex justify-center ">
-    <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="{{asset('img/escudo_logotipo_buap_page-0002.png')}}" alt="Inserte una imagen">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Titulo random</div>
-            <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-        </div>
-        <div class="flex justify-end">
-            <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Alternative</button>
-        </div>
-    </div>
-</div>
-<div id="relleno-nav"></div>
-<div class="flex justify-center ">
-    <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="{{asset('img/escudo_logotipo_buap_page-0002.png')}}" alt="Inserte una imagen">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Titulo random</div>
-            <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#BUAP</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#MachineLearning</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#MicroElectronica</span>
-        </div>
-    </div>
-</div>
-<div id="relleno-nav"></div>
-<div class="flex justify-center ">
-    <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="{{asset('img/escudo_logotipo_buap_page-0002.png')}}" alt="Inserte una imagen">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Titulo random</div>
-            <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#BUAP</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#MachineLearning</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#MicroElectronica</span>
+<div id="root">
+        <div class="container mx-auto mt-20">
+            <h1 class="font-black text-5xl text-center md:w-2/3 mx-auto">Lista usuarios</h1>
+            <div class="mt-12 md:flex">
+                <div class="md:w-1/2 lg:w-2/5 mx-5">
+                    <h2 class="font-black text-3xl text-center">Ingresar usuarios</h2>
+                    <p class="text-lg mt-5 text-center mb-10">Añade Patentes y  <span>Administrarlos</span></p>
+                    <form class="bg-white shadow-lg rounded-lg py-10 px-10">
+                        <div class="mb-5"><label for="patente" class="block text-gray-700 uppercase font-bold">Nombre Patente </label>
+                            <input id="patente" type="text" placeholder="Nombre de la patente" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" value="">
+                        </div>
+                        <div class="mb-5">
+                            <label for="alta" class="block text-gray-700 uppercase font-bold">Alta</label>
+                            <input id="alta" type="date" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" value="">
+                        </div>
+                        <div class="mb-5">
+                            <label for="Sintomas" class="block text-gray-700 uppercase font-bold">Resumen de la patente</label>
+                            <textarea id="resumen" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" placeholder="Resumen de patente"></textarea>
+                        </div>
+                        <input type="submit" class=" bg-[#003B5C] w-full p-3 text-white uppercase font-bold hover:bg-[#236082] cursor-pointer" value="Agregar paciente"></form>
+                </div>
+                <div class="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
+                    <h2 class="font-black text-3xl text-center">No hay usuarios registrados</h2>
+                <p class="text-xl mt-5 mb-10 text-center">comienza agregando un usuario <span>y aparecerán en este lugar</span></p>
+            </div>
         </div>
     </div>
 </div>
