@@ -11,6 +11,7 @@
         <title>ICUAP</title>
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
+        @livewireStyles
 </head>
 <body >	
   <header class="header">	
@@ -54,6 +55,7 @@
         Copyright ©2022 | Diseñado por: <a href="https://wefesolutions.com/">W.E.F.E.</a>
     </small>
 </footer>
+@livewireScripts
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>

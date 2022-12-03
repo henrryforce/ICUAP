@@ -47,6 +47,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Dar de alta a usuario</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                
                 <div class="modal-body">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <!--Nav tab-->
@@ -56,47 +57,11 @@
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="datos-user">
-                            <!------------Llenar datos ------------->
-                            <div id="relleno-nav"></div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
-                                <input type="text" class="form-control" placeholder="Primer apellido"
-                                    aria-label="Primer apellido" aria-describedby="basic-addon1">
-                                <input type="text" class="form-control" placeholder="Segundo apellido"
-                                    aria-label="Segundo apellido" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
-                                <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="Name"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
-                                <input type="text" class="form-control" placeholder="Email" aria-label="mail"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="bi bi-building-fill"></i></span>
-                                <select class="form-control">
-                                    <option selected="">Centro de adscripción</option>
-                                    <option>BUAP</option>
-                                    <option>IPN</option>
-                                    <option>UDLA</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="bi bi-book"></i></span>
-                                <input type="text" class="form-control" placeholder="Área de interes" aria-label="mail"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                        </div>
+                        <livewire:modal-add-user />
                     </div>
                 </div><!-- Fin modal body -->
-                <div class="modal-footer">
-                    <button type="button" class="bg-[#00B8E4] font-bold w-20 p-2 text-white rounded-lg mt-1.5" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="bg-[#003B5C] font-bold w-30 p-2 text-white rounded-lg mt-1.5">Guardar</button>
-                </div>
+                
+            
             </div>
         </div>
     </div>
