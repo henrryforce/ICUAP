@@ -115,33 +115,31 @@
                     @csrf
                     <div class="mb-2">
                         <label for="user" class="mb-2 block uppercase text-gray-500 font-bold">Usuario</label>
-                        <input id="user" name="user" type="text" placeholder="Tu nombre de usuario" class="border w-full p-2 rounded-lg @error('name') border-red-500 @enderror"
-                        value="{{old('user')}}">
+                        <input id="user" name="user" type="text" placeholder="Tu nombre de usuario" class="border w-full p-2 rounded-lg "
+                        >
                         @error('user')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p2 text-center">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-2">
                         <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
-                        <input id="password" name="password" type="password" placeholder="Tu password de registro" class="border w-full p-2 rounded-lg @error('name') border-red-500 @enderror"
-                        value="{{old('password')}}">
-                        @error('password')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p2 text-center">{{$message}}</p>
-                        @enderror
+                        <input id="password" name="password" type="password" placeholder="Tu password de registro" class="border w-full p-2 rounded-lg "
+                        >
+                        
                     </div>
                     <div class="mb-3">
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Tipo de usuario</label>
-                        <select class="border w-full p-2 rounded-lg bg-white">
-                            <option selected="">Elija un usuario</option>
-                            <option>Administrador</option>
-                            <option>Capturista</option>
+                        <select id="tipo_user" class="border w-full p-2 rounded-lg bg-white">
+                            <option selected="0">Elija un usuario</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Capturista</option>
                         </select>
                     </div>
-                    <input id="tipo_user" name="tipo_user" hidden type="text" placeholder="Tu nombre de usuario" class="border w-full p-2 rounded-lg" value="1">
+                    
                     <div class="mb-2">
                         <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Repetir password</label>
-                        <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Repite tu password" class="border w-full p-2 rounded-lg @error('name') border-red-500 @enderror"
-                        value="{{old('password_confirmation')}}">
+                        <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Repite tu password" class="border w-full p-2 rounded-lg "
+                        >
                     </div>
                     <input type="button" id="btnAltaUser" value="Crear Cuenta" class="bg-[#003B5C] font-bold w-100 p-3 text-white rounded-lg mt-2"/>
                   </form>     

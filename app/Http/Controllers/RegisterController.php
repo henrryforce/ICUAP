@@ -34,6 +34,7 @@ class RegisterController extends Controller
             'password'=> Hash::make( $request->password),
             'tipo_user' => $request->tipo_user
         ]);
+        return response()->json("ok",200);
         redirect()->route('administracion',auth()->user()->user);
         }
         
