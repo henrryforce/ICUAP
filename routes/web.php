@@ -8,6 +8,8 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\CrearInvertagorController;
+use App\Http\Controllers\ListadoInvestigadoresController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +33,7 @@ Route::post('/administracion', [AdministracionController::class,'index']);
 Route::get('/administracion/investigador/detalles', function () {return view('auth.detalles_investigador');})->name('investigador.detalles');
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
 Route::get('/vista_usuarios', function () {return view('vista_usuarios');})->name('usuarios');
-Route::get('/listado_investigadores', function () {return view('listado_investigadores');})->name('investigadores');
+Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'index'])->name('investigadores');
+Route::post('/listado_investigadores', [ListadoInvestigadoresController::class,'index']);
+Route::delete('/listado_investigadores/{id}', [ListadoInvestigadoresController::class,'destroy'])->name('investigadoresDelete');
 Route::get('/lista_usuarios', function () {return view('lista_usuarios');})->name('lista_usuarios');

@@ -36,7 +36,7 @@
             <a href="{{route('login')}}">Iniciar sesión</a>	
           @endguest
           @auth
-          
+          <a href="{{route('administracion')}}">Panel de administración</a>
           <form method="POST" action="{{route('logout')}}">
             @csrf
             <button type="submit">
