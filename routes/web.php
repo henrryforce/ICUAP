@@ -26,7 +26,6 @@ Route::get('/', function () {return view('pagina_principal');})->name('index');
 Route::get('/login',[loginController::class,'index'])->name('login');
 Route::post('/login',[loginController::class,'store']);
 Route::post('/logout',[LogoutController::class,'store'])->name('logout');
-Route::post('/register', [RegisterController::class,'store'])->name('altaUsaurio');
 Route::get('/administracion', [AdministracionController::class,'index'])->name('administracion');
 Route::post('/administracion', [AdministracionController::class,'index']);
 
