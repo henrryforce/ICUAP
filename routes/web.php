@@ -29,11 +29,9 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 Route::get('/administracion', [AdministracionController::class,'index'])->name('administracion');
 Route::post('/administracion', [AdministracionController::class,'index']);
 
-Route::get('/administracion/investigador/detalles', function () {return view('auth.detalles_investigador');})->name('investigador.detalles');
+Route::get('/administracion/investigador/completar', function () {return view('auth.detalles_investigador');})->name('investigador.detalles');
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
 Route::get('/vista_usuarios', [PaginaListaUsuarios::class,'index'])->name('usuarios');
 Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'index'])->name('investigadores');
 Route::post('/listado_investigadores', [ListadoInvestigadoresController::class,'index']);
-Route::delete('/listado_investigadores', [ListadoInvestigadoresController::class,'destroy'])->name('investigadoresDelete');
-Route::delete('/usuario/eliminar', [PaginaListaUsuarios::class,'destroy'])->name('usuarioDelete');
 Route::get('/lista_usuarios', function () {return view('lista_usuarios');})->name('lista_usuarios');

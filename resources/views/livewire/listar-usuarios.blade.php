@@ -13,15 +13,10 @@
             
         </div>
         <div class="flex justify-end">
-            <form method="POST" action="{{route('usuarioDelete')}}" >
-                @method('DELETE')
-                @csrf
-                <input name="usuario" type="text" hidden value="{{$usuario->id}}"/>
-                <button type="submit"
-                class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full" >Eliminar</button>
-                
-            </form>
             
+                <button type="button" wire:click="borrarUsuario('{{$usuario->id}}')"
+                class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full" >Eliminar</button>
+          
             <button type="button"
                 class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#003B5C] rounded-full ">Editar</button>
         </div>

@@ -13,9 +13,9 @@ class PaginaListaUsuarios extends Controller
     public function index(){
         return view('vista_usuarios');
     }
-    public function destroy(Request $request){
-        $id = (int) $request->usuario;
-        Login::destroy($id);
-        return back();
-    }
+    // public function destroy(Request $request){
+    //     $id = (int) $request->usuario;
+    //     Login::destroy($id);
+    //     return back();
+    // }
 }

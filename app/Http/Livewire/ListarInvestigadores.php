@@ -15,4 +15,9 @@ class ListarInvestigadores extends Component
     {
         return view('livewire.listar-investigadores',['investigadores'=> Investigadore::all(),'correos'=> Correo::all(),'centros'=>Centros_Adscripcion::all(),'areasInteres'=>Areas_interese::all()]);
     }
+    public function eliminarInvestigador($id){
+        $investigador = Investigadore::find((int) $id);
+        Correo::destroy($investigador->correo_id);
+       Investigadore::destroy((int)$id);
+    }
 }

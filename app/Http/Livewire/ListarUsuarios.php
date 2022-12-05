@@ -11,4 +11,8 @@ class ListarUsuarios extends Component
     {
         return view('livewire.listar-usuarios',['usuarios'=> Login::all('id','user','tipo_user')]);
     }
+    public function borrarUsuario($id){       
+        Login::destroy((int) $id);
+    }
+
 }
