@@ -4,7 +4,7 @@
 @section('contenido')
 <div id="relleno"></div>
 <div class="flex justify-center ">
-    <livewire:listar-usuarios />
+    <h1>Cosas del otro coso de busqueda</h1>
 </div>
 
 {{-- <div class="contenedor flex justify-between">

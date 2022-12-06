@@ -31,7 +31,7 @@ Route::post('/administracion', [AdministracionController::class,'index']);
 
 Route::get('/administracion/investigador/completar', function () {return view('auth.detalles_investigador');})->name('investigador.detalles');
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
-Route::get('/vista_usuarios', [PaginaListaUsuarios::class,'index'])->name('usuarios');
+// Route::get('/vista_usuarios', [PaginaListaUsuarios::class,'index'])->name('usuarios');
 Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'index'])->name('investigadores');
 Route::post('/listado_investigadores', [ListadoInvestigadoresController::class,'index']);
-Route::get('/lista_usuarios', function () {return view('lista_usuarios');})->name('lista_usuarios');
+Route::get('/lista_usuarios', [PaginaListaUsuarios::class,'index'])->name('listaUsuarios');
