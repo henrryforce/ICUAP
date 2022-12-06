@@ -14,8 +14,8 @@
         </div>
         <div class="flex justify-end">
             
-                <button type="button" wire:click="borrarUsuario('{{$usuario->id}}')"
-                class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full" >Eliminar</button>
+                <button type="button" 
+                class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full" wire:click="borrarUsuario('{{$usuario->id}}')">Eliminar</button>
           
             <button type="button"
                 class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#003B5C] rounded-full ">Editar</button>

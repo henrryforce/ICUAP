@@ -13,12 +13,21 @@ class BuscadorAgregarItems extends Component
     public $piecked=false;
     public $idInvestigador;
     public $patentes=[];
+    public $patente=[];
     public $articulos=[];
     public $redes=[];
     public $patenteSelected=false;
     public $pNombre;
     public $pFecha;
     public $pResume;
+    public $idPatente;
+    public $editarp=false;
+    protected $rules = [
+        'pNombre' =>'required',
+        'pFecha'=>'required',
+        'pResume'=>'required|min:50|max:1500',
+        
+    ];
     public function render()
     {
         return view('livewire.buscador-agregar-items');
@@ -36,16 +45,26 @@ class BuscadorAgregarItems extends Component
             $this->investigadores=[];
         }
     }
+    
     public function asignarInvestigador($id,$nombre){
         $this->idInvestigador = $id;
         $this->buscar = $nombre;
         $this->piecked = true;
+        $this->patentes=Patente::where('investigador_id',$id)->get();
         
     }
     public function clickPatente(){
         $this->patenteSelected = true;
     }
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
+    }
     public function AgregarPatente(){
+        $this->validate(['pNombre' =>'required',
+        'pFecha'=>'required',
+        'pResume'=>'required|min:50|max:1500'
+
+        ]);
         Patente::create([
             'titulo'=>$this->pNombre,
             'resumen'=>$this->pResume,
@@ -58,4 +77,17 @@ class BuscadorAgregarItems extends Component
         session()->flash('message', 'Usuario Agregado con exito');
         
     }
+    public function eliminarPatente($id){
+        Patente::destroy((int) $id);
+    }
+    public function editarPatente($id,$titulo,$fecha,$resumen){
+        $this->editarp=true;
+        $this->pNombre=$titulo;
+        $this->pFecha=$fecha;
+        $this->pResume=$resumen;
+        
+        // $this->pFecha=$this->patente->year;
+        // $this->pResume=$this->patente->resumen;
+    }
+    
 }

@@ -163,9 +163,9 @@ p {
   opacity: 1;
   pointer-events: auto;
 }
-button, [type="button"]{
+/* button, [type="button"]{
   background-color: transparent;
-}
+} */
 
 @media screen and (min-width: 1024px) {
   .contact-form {
