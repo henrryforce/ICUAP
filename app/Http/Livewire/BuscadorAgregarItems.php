@@ -98,6 +98,9 @@ class BuscadorAgregarItems extends Component
         $this->pFecha=$fecha;
         $this->pResume=$resumen;
     }
-  
+   public function reoverInvestigadorSeleccionado(){
+    $this->piecked=false;
+    $this->idInvestigador='';
+   }
     
 }
