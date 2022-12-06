@@ -20,7 +20,7 @@ class BuscadorAgregarItems extends Component
     public $pNombre;
     public $pFecha;
     public $pResume;
-    public $idPatente;
+    public $idPatente='';
     public $editarp=false;
     protected $rules = [
         'pNombre' =>'required',
@@ -65,16 +65,27 @@ class BuscadorAgregarItems extends Component
         'pResume'=>'required|min:50|max:1500'
 
         ]);
+        if($this->editarp){
+           $findPat=Patente::find((int) $this->idPatente);
+            $findPat->titulo=$this->pNombre;
+            $findPat->year=$this->pFecha;
+            $findPat->resumen=$this->pResume;
+            $findPat->save();
+            session()->flash('message', 'Patente Editada con exito');
+            $this->patentes=Patente::where('investigador_id',$this->idInvestigador)->get();
+        }else{       
         Patente::create([
             'titulo'=>$this->pNombre,
             'resumen'=>$this->pResume,
             'year'=>$this->pFecha,
             'investigador_id'=>$this->idInvestigador
         ]);
+        session()->flash('message', 'Patente Agregado con exito');
+     }
         $this->reset('pNombre');
         $this->reset('pResume');
         $this->reset('pFecha');
-        session()->flash('message', 'Usuario Agregado con exito');
+        
         
     }
     public function eliminarPatente($id){
@@ -82,12 +93,11 @@ class BuscadorAgregarItems extends Component
     }
     public function editarPatente($id,$titulo,$fecha,$resumen){
         $this->editarp=true;
+        $this->idPatente =$id;
         $this->pNombre=$titulo;
         $this->pFecha=$fecha;
         $this->pResume=$resumen;
-        
-        // $this->pFecha=$this->patente->year;
-        // $this->pResume=$this->patente->resumen;
     }
+  
     
 }
