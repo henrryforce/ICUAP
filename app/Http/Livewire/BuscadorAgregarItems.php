@@ -38,9 +38,10 @@ class BuscadorAgregarItems extends Component
         }
         if(!$this->piecked){
             $this->validate([
-            "buscar" => "required|min:2"
+            "buscar" => "required"
         ]);
-        $this->investigadores = Investigadore::where('apellido_paterno','like',trim($this->buscar).'%')->take(3)->get();
+        // $this->investigadores = Investigadore::where('apellido_paterno','like',trim($this->buscar).'%')->take(3)->get();
+        $this->investigadores = Investigadore::orWhere('apellido_paterno','like',trim($this->buscar).'%')->orWhere('apellido_materno','like',trim($this->buscar).'%')->orWhere('nombres','like',trim($this->buscar).'%')->get();
         }else{
             $this->investigadores=[];
         }
@@ -101,6 +102,7 @@ class BuscadorAgregarItems extends Component
    public function reoverInvestigadorSeleccionado(){
     $this->piecked=false;
     $this->idInvestigador='';
+    $this->investigadores=[];
    }
     
 }
