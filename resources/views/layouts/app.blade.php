@@ -39,8 +39,9 @@
           <a href="{{route('administracion')}}">Panel de administración</a>
           <form method="POST" action="{{route('logout')}}">
             @csrf
-            <button type="submit">
-              <a >Cerrar sesión</a>	
+            <button  type="submit">
+              <a style="color: white;hover:#FF8C00" >Cerrar sesión</a>
+
             </button>
             
         </form>
