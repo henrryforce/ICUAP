@@ -24,7 +24,8 @@
       <div class="card bg-light">
         <article class="card-body mx-auto" style="max-width: 400px;">
           <h4 class="card-title mt-3 text-center">Buscar un investigador</h4>
-            <div class="input-group mb-3">
+          <livewire:buscador-index />
+            {{-- <div class="input-group mb-3">
               <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
               <input type="text" class="form-control" placeholder="Primer apellido" aria-label="Name" aria-describedby="basic-addon1">
               <input type="text" class="form-control" placeholder="Segundo apellido" aria-label="Name" aria-describedby="basic-addon1">
@@ -35,7 +36,7 @@
               </div>                       
             <div class="form-group col text-center">
                 <input type="submit" class="botn btn-block" value="Buscar">
-            </div> <!-- form-group// -->      
+            </div> <!-- form-group// -->       --}}
         </article>
       </div>
       <article id="gracias" class="modal">
