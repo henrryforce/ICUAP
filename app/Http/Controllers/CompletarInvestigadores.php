@@ -10,6 +10,6 @@ class CompletarInvestigadores extends Controller
         $this->middleware('auth');
     } 
     public function index(){
-        return view('completarInvestigador');
+        return view('auth.detalles_investigador');
     }
 }
