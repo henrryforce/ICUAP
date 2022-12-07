@@ -9,10 +9,10 @@
                 <a href="#" class="dashboard-nav-item active" data-bs-toggle="modal"
                     data-bs-target="#exampleModal"><i class="bi bi-person-fill-add"></i>Nuevo investigador</a>
                 <a href="{{route('investigadores')}}" class="dashboard-nav-item"><i class="bi bi-person-dash-fill"></i>Eliminar investigador</a>
-                <a href="{{route('investigador.detalles')}}" class="dashboard-nav-item"><i class="bi bi-person-fill-exclamation"></i>Completar investigador</a>
+                <a href="{{route('completarInvestigador')}}" class="dashboard-nav-item"><i class="bi bi-person-fill-exclamation"></i>Completar investigador</a>
                 <a href="#" class="dashboard-nav-item active" data-bs-toggle="modal" 
                 data-bs-target="#registrarUsuario"><i class="bi bi-person-fill-add"></i>Nuevo usuario</a>
-                <a href="{{route('usuarios')}}" class="dashboard-nav-item"><i class="bi bi-gear-fill"></i>Lista usuarios </a>
+                <a href="{{route('listaUsuarios')}}" class="dashboard-nav-item"><i class="bi bi-gear-fill"></i>Lista usuarios </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-person-fill"></i>Perfil </a>
                 <div class="nav-item-divider"></div>
                 <form method="POST" action="{{route('logout')}}">

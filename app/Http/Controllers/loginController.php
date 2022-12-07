@@ -8,7 +8,8 @@ use PhpParser\Node\Expr\FuncCall;
 class loginController extends Controller
 {
     public function index() {
-        return view('auth.login');
+        if ( auth()->check()) return redirect('/administracion');
+            return view('auth.login');      
     }
     public function store(Request $request){
         $this->validate($request,[

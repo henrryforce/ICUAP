@@ -7,6 +7,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdministracionController;
+use App\Http\Controllers\CompletarInvestigadores;
 use App\Http\Controllers\CrearInvertagorController;
 use App\Http\Controllers\ListadoInvestigadoresController;
 use App\Http\Controllers\PaginaListaUsuarios;
@@ -29,7 +30,7 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 Route::get('/administracion', [AdministracionController::class,'index'])->name('administracion');
 Route::post('/administracion', [AdministracionController::class,'index']);
 
-Route::get('/administracion/investigador/completar', function () {return view('auth.detalles_investigador');})->name('investigador.detalles');
+Route::get('/administracion/investigador/completar', [CompletarInvestigadores::class,'index'])->name('completarInvestigador');
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
 // Route::get('/vista_usuarios', [PaginaListaUsuarios::class,'index'])->name('usuarios');
 Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'index'])->name('investigadores');
