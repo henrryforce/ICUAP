@@ -11,7 +11,7 @@ class PaginaListaUsuarios extends Controller
         $this->middleware('auth');
     } 
     public function index(){
-        return view('listaUsuarios');
+        return view('lista_usuarios');
     }
     // public function destroy(Request $request){
     //     $id = (int) $request->usuario;
