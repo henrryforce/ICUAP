@@ -200,15 +200,16 @@ p {
 
 .hero-image-opacity {
   width: 100%;
-  min-height: 55em;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  background-color: var(--hero-opacity-color);
 } 
 
 .hero-image-title {
-  font-size: 5vw;
+  font-size: 2vw;
   color: var(--hero-text-color);
   font-weight: 600;
   display: flex;
@@ -895,14 +896,6 @@ background-color: var(--first-color);
   
   .logo a{
     font-size: 50px;
-  }
-  .hero-image {
-    background-image: var(--hero-image);
-    background-repeat: no-repeat;
-    background-size: 60%;
-    background-position: center;
-    background-attachment: var(--hero-attachment);
-
   }
   .alert-danger{
     margin-left: 30rem;

@@ -18,8 +18,7 @@
     <section class="contenedor">	
       <div class="logo">	
         <img src="{{asset('img/image 2.svg')}}" alt="Logo Minerva">
-        <a href="#inicio" class="logo-nombre">ECOSISTEMA DE INVESTIGACIÓN ICUAP</a>	
-      
+        <a href="#inicio" class="">ECOSISTEMA DE INVESTIGACIÓN ICUAP</a>	
         <button class="menu-btn">	
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">	
             <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />	
@@ -46,7 +45,6 @@
       </form>
     </section>
   </header>
-  <div id="relleno-nav"></div>
     @yield('contenido')
   <footer class="footer">
     <small>

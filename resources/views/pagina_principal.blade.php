@@ -4,21 +4,22 @@
 @section('contenido')
 
 <section id="inicio" class="home">
-<article class="hero-image" style="--hero-image: url({{asset('img/hero_image.png')}}); --attachment:fixed;">
-      <aside class="hero-image-opacity" style="--hero-opacity-color: var(--black-alpha-color);">
-        <div class="hero-image-content">
-        </div>
-      </aside>
-    </article>
-  </section>
+  <article class="hero-image" style="--hero-image: url('/public/img/52527624876_6cb1d2dc82_o.jpg'); --attachment:fixed;">
+    <aside class="hero-image-opacity" style="--hero-opacity-color: var(--black-alpha-color);">
+      <div class="hero-image-content">
+        <p class="hero-image-title" style="--hero-text-color: var(--white-color);" >El Ecosistema ICUAP en el marco de la ciencia abierta, tiene como objetivo </p>
+        <p class="hero-image-title" style="--hero-text-color: var(--white-color);" >difundir los avances, las investigaciones y los  productos científicos de la comunidad</p>
+        <p class="hero-image-title" style="--hero-text-color: var(--white-color);" >académica del Instituto de Ciencias.  En un inicio se busca  compartir la investigación </p>
+        <p class="hero-image-title" style="--hero-text-color: var(--white-color);" >que conduzca al desarrollo e intercambio fuera y dentro de la Institución. </p>
+      </div>
+    </aside>
+  </article>
+</section>
   <div class="hero-image-title">  
-    <p >Bienvenido al Ecosistema <br>
-          de Investigación ICUAP
-    </p>
   </div>
   <div id="relleno"></div>
   <section id="">
-    <div class="container">
+    <div class="contenedor">
       <h1 class="section-title">Buscar</h1>
       <div class="card bg-light">
         <article class="card-body mx-auto" style="max-width: 400px;">
