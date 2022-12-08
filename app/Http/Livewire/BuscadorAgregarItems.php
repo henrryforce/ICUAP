@@ -25,7 +25,7 @@ class BuscadorAgregarItems extends Component
     public $idPatente='';
     public $nombreR;
     public $tipoR;
-    public $idRed;
+    public $idRed='';
     public $editarRed=false;
     public $editarp=false;
     protected $rules = [
@@ -99,8 +99,16 @@ class BuscadorAgregarItems extends Component
         $this->reset('pFecha');        
     }
     public function AgregarRedes(){
+        $this->validate([
+            'nombreR'=>'required',
+            'tipoR'=>'required'
+        ]);
         if($this->editarRed){
-            dump("alav como entro aqui");
+            $findRed = Red_institucional::find((int) $this->idRed);
+            $findRed->nombre=$this->nombreR;
+            $findRed->tipo_red_institucion_id=$this->tipoR;
+            $findRed->save();
+            session()->flash('message', 'Red Editada con exito');
         }else{
             $this->validate([
                 'tipoR'=> 'required',
@@ -112,10 +120,10 @@ class BuscadorAgregarItems extends Component
                 'investigador_id'=>$this->idInvestigador
             ]);
             session()->flash('message', 'Red Institucional agregada con exito');
-            $this->redes=Red_institucional::where('investigador_id',$this->idInvestigador)->get();
-            $this->reset('nombreR');
-            $this->tipoR=0;
         }
+        $this->redes=Red_institucional::where('investigador_id',$this->idInvestigador)->get();
+        $this->reset('nombreR');
+        $this->tipoR=0;
 
     }
     public function eliminarPatente($id){
@@ -130,6 +138,12 @@ class BuscadorAgregarItems extends Component
         $this->pNombre=$titulo;
         $this->pFecha=$fecha;
         $this->pResume=$resumen;
+    }
+    public function editarRed($id,$nombre,$tipo){
+        $this->nombreR=$nombre;
+        $this->idRed=$id;
+        $this->tipoR=$tipo;
+        $this->editarRed=true;
     }
    public function reoverInvestigadorSeleccionado(){
     $this->piecked=false;

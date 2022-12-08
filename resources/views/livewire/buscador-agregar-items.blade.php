@@ -326,7 +326,7 @@
                             @enderror
                         </div>
                     </div>
-                    @if ($editarp)
+                    @if ($editarRed)
                         <input type="submit"
                             class=" bg-[#003B5C] w-full p-3 text-white uppercase font-bold hover:bg-[#236082] cursor-pointer"
                             value="Editar Red">
@@ -356,7 +356,7 @@
                                     class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full">Eliminar</button>
 
                                 <button type="button"
-                                    
+                                    wire:click="editarRed('{{$red->id}}','{{$red->nombre}}','{{$red->tipo_red_institucion_id}}')"
                                     class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#003B5C] rounded-full ">Editar</button>
                             </div>
                         </div>
