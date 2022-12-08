@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Investigadore;
 use App\Models\Patente;
+use App\Models\Red_institucional;
 
 class BuscadorAgregarItems extends Component
 {
@@ -17,10 +18,15 @@ class BuscadorAgregarItems extends Component
     public $articulos=[];
     public $redes=[];
     public $patenteSelected=false;
+    public $redSelected=false;
     public $pNombre;
     public $pFecha;
     public $pResume;
     public $idPatente='';
+    public $nombreR;
+    public $tipoR;
+    public $idRed;
+    public $editarRed=false;
     public $editarp=false;
     protected $rules = [
         'pNombre' =>'required',
@@ -52,10 +58,16 @@ class BuscadorAgregarItems extends Component
         $this->buscar = $nombre;
         $this->piecked = true;
         $this->patentes=Patente::where('investigador_id',$id)->get();
+        $this->redes=Red_institucional::where('investigador_id',$id)->get();
         
     }
     public function clickPatente(){
         $this->patenteSelected = true;
+        $this->redSelected =false;
+    }
+    public function clickRed(){
+        $this->patenteSelected = false;
+        $this->redSelected =true;
     }
     public function updated($propertyName){
         $this->validateOnly($propertyName);
@@ -64,7 +76,6 @@ class BuscadorAgregarItems extends Component
         $this->validate(['pNombre' =>'required',
         'pFecha'=>'required',
         'pResume'=>'required|min:50|max:1500'
-
         ]);
         if($this->editarp){
            $findPat=Patente::find((int) $this->idPatente);
@@ -85,12 +96,33 @@ class BuscadorAgregarItems extends Component
      }
         $this->reset('pNombre');
         $this->reset('pResume');
-        $this->reset('pFecha');
-        
-        
+        $this->reset('pFecha');        
+    }
+    public function AgregarRedes(){
+        if($this->editarRed){
+            dump("alav como entro aqui");
+        }else{
+            $this->validate([
+                'tipoR'=> 'required',
+                'nombreR'=>'required'
+            ]);
+            Red_institucional::create([
+                'nombre'=>$this->nombreR,
+                'tipo_red_institucion_id'=>$this->tipoR,
+                'investigador_id'=>$this->idInvestigador
+            ]);
+            session()->flash('message', 'Red Institucional agregada con exito');
+            $this->redes=Red_institucional::where('investigador_id',$this->idInvestigador)->get();
+            $this->reset('nombreR');
+            $this->tipoR=0;
+        }
+
     }
     public function eliminarPatente($id){
         Patente::destroy((int) $id);
+    }
+    public function eliminarRed($id){
+        Red_institucional::destroy((int) $id);
     }
     public function editarPatente($id,$titulo,$fecha,$resumen){
         $this->editarp=true;
