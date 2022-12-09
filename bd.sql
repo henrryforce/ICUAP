@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `Articulos`;
 CREATE TABLE `Articulos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ano_publicacion` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ano_publicacion` year NOT NULL,
   `doi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `autores` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `investigador_id` bigint unsigned NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE `Articulos` (
   KEY `articulos_journal_id_foreign` (`journal_id`),
   CONSTRAINT `articulos_investigador_id_foreign` FOREIGN KEY (`investigador_id`) REFERENCES `investigadores` (`id`) ON DELETE CASCADE,
   CONSTRAINT `articulos_journal_id_foreign` FOREIGN KEY (`journal_id`) REFERENCES `journals` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +75,7 @@ CREATE TABLE `Articulos` (
 
 LOCK TABLES `Articulos` WRITE;
 /*!40000 ALTER TABLE `Articulos` DISABLE KEYS */;
-INSERT INTO `Articulos` VALUES (5,'dsadas','2222','dsadasd','asdas',1,7,'2022-12-09 02:43:11','2022-12-09 02:43:11');
+INSERT INTO `Articulos` VALUES (1,'El articulo mayor',2022,'dsadas','dsadasd',1,11,'2022-12-09 03:24:46','2022-12-09 03:45:40');
 /*!40000 ALTER TABLE `Articulos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +178,7 @@ CREATE TABLE `journals` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +187,7 @@ CREATE TABLE `journals` (
 
 LOCK TABLES `journals` WRITE;
 /*!40000 ALTER TABLE `journals` DISABLE KEYS */;
-INSERT INTO `journals` VALUES (7,'sdaasd','2022-12-09 02:43:11','2022-12-09 02:43:11');
+INSERT INTO `journals` VALUES (11,'The journal EBC','2022-12-09 03:24:46','2022-12-09 03:46:02');
 /*!40000 ALTER TABLE `journals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +234,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,7 +243,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2019_12_14_000001_create_personal_access_tokens_table',1),(2,'2022_11_14_023235_create_correos',1),(3,'2022_11_14_023456_create_centros_adscripcions',1),(4,'2022_11_14_023532_create_journals',1),(5,'2022_11_14_024002_create_logins',1),(6,'2022_11_14_024301_create_tipos_redes_institucionales',1),(7,'2022_11_17_000754_create__investigadores',1),(8,'2022_11_17_002935_create_redes_instirucionales',1),(9,'2022_11_17_004132_create_patentes',1),(10,'2022_11_23_051311_create_tipos_users',1),(11,'2022_11_23_051639_add_tipo_field_to_logins_table',1),(13,'2022_12_03_213127_create__areas_intereses',2),(14,'2022_12_07_212858_create__articulos',3);
+INSERT INTO `migrations` VALUES (1,'2019_12_14_000001_create_personal_access_tokens_table',1),(2,'2022_11_14_023235_create_correos',1),(3,'2022_11_14_023456_create_centros_adscripcions',1),(4,'2022_11_14_023532_create_journals',1),(5,'2022_11_14_024002_create_logins',1),(6,'2022_11_14_024301_create_tipos_redes_institucionales',1),(7,'2022_11_17_000754_create__investigadores',1),(8,'2022_11_17_002935_create_redes_instirucionales',1),(9,'2022_11_17_004132_create_patentes',1),(10,'2022_11_23_051311_create_tipos_users',1),(11,'2022_11_23_051639_add_tipo_field_to_logins_table',1),(13,'2022_12_03_213127_create__areas_intereses',2),(15,'2022_12_07_212858_create__articulos',3);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -400,4 +400,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-08 20:59:56
+-- Dump completed on 2022-12-08 21:46:34

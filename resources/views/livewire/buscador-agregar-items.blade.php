@@ -4,7 +4,7 @@
         <div class="relative w-full">
             <input type="text" wire:model="buscar" id="apellido" wire:keydown.backspace="reoverInvestigadorSeleccionado"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5 dark:border-gray-600 dark:placeholder-gray-400"
-                placeholder="Ingresa el Apellido">
+                placeholder="Ingresa el Nombre para hacer la busqueda">
             @error('buscar')
                 <div class="input-group mb3"> <span
                         class="bg-red-500 text-white my-2 rounded-lg text-sm p2 text-center">{{ $message }}</span>
@@ -231,7 +231,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            @if ($editarp)
+                            @if ($editarArticulo)
                                 <input type="submit"
                                     class=" bg-[#003B5C] w-full p-3 text-white uppercase font-bold hover:bg-[#236082] cursor-pointer"
                                     value="Editar artículo">
@@ -265,7 +265,7 @@
                                             class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full">Eliminar</button>
 
                                         <button type="button"
-                                            
+                                            wire:click="editarArticulo('{{$articulo->id}}','{{$articulo->nombre}}','{{$articulo->ano_publicacion}}','{{$articulo->doi}}','{{$articulo->autores}}','{{$articulo->journal_id}}','{{$this->getJournal($articulo->journal_id) }}')"
                                             class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#003B5C] rounded-full ">Editar</button>
                                     </div>
                                 </div>

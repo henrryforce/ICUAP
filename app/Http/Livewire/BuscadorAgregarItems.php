@@ -19,11 +19,9 @@ class BuscadorAgregarItems extends Component
     public $patente=[];
     public $articulos=[];
     public $redes=[];
-    public $journals=[];
     public $patenteSelected=false;
     public $redSelected=false;
     public $articuloSelected=false;
-    public $articulosSelected=false;
     public $pNombre;
     public $pFecha;
     public $pResume;
@@ -37,6 +35,7 @@ class BuscadorAgregarItems extends Component
     public $fechaArt;
     public $doiArt;
     public $journalArt;
+    public $journalId;
     public $editarArticulo=false;
     public $editarRed=false;
     public $editarp=false;
@@ -60,7 +59,7 @@ class BuscadorAgregarItems extends Component
             "buscar" => "required"
         ]);
         // $this->investigadores = Investigadore::where('apellido_paterno','like',trim($this->buscar).'%')->take(3)->get();
-        $this->investigadores = Investigadore::orWhere('apellido_paterno','like',trim($this->buscar).'%')->orWhere('apellido_materno','like',trim($this->buscar).'%')->orWhere('nombres','like',trim($this->buscar).'%')->get();
+        $this->investigadores = Investigadore::orWhere('apellido_paterno','like',trim($this->buscar).'%')->orWhere('apellido_materno','like',trim($this->buscar).'%')->orWhere('nombres','like',trim($this->buscar).'%')->take(5)->get();
         }else{
             $this->investigadores=[];
         }
@@ -73,7 +72,7 @@ class BuscadorAgregarItems extends Component
         $this->patentes=Patente::where('investigador_id',$id)->get();
         $this->redes=Red_institucional::where('investigador_id',$id)->get();
         $this->articulos=Articulo::where('investigador_id',$id)->get();
-        $this->journals = Journal::all();
+        
         
     }
     public function clickPatente(){
@@ -159,7 +158,16 @@ class BuscadorAgregarItems extends Component
             
         ]);
         if($this->editarArticulo){
-            dump('alav editanding');
+            $art = Articulo::find((int)$this->idArticulo);
+            $jour = Journal::find((int) $this->journalId);
+            $art->nombre =$this->tituloArt;
+            $art->ano_publicacion=$this->fechaArt;
+            $art->doi=$this->doiArt;
+            $art->autores =$this->autoresA;
+            $art->save();
+            $jour->nombre=$this->journalArt;
+            $jour->save();
+            session()->flash('message', 'Articulo editado con exito');
         }else{
             $joural= Journal::create([
                 'nombre'=>$this->journalArt
@@ -179,6 +187,7 @@ class BuscadorAgregarItems extends Component
         $this->reset('doiArt');
         $this->reset('autoresA');
         $this->reset('journalArt');
+        $this->editarArticulo=false;
         $this->articulos=Articulo::where('investigador_id',$this->idInvestigador)->get();
     }
     public function getJournal($id){
@@ -209,6 +218,16 @@ class BuscadorAgregarItems extends Component
         $this->idRed=$id;
         $this->tipoR=$tipo;
         $this->editarRed=true;
+    }
+    public function editarArticulo($id,$nombre,$year,$doi,$autores,$journalid,$journalNombre){
+        $this->idArticulo=$id;
+        $this->tituloArt=$nombre;
+        $this->fechaArt=$year;
+        $this->doiArt=$doi;
+        $this->autoresA=$autores;
+        $this->journalArt=$journalNombre;
+        $this->journalId=$journalid;
+        $this->editarArticulo=true;
     }
    public function reoverInvestigadorSeleccionado(){
     $this->piecked=false;
