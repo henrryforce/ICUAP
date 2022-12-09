@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('Articulos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->date('ano_publicacion');
+            $table->string('ano_publicacion');
             $table->string('doi');
             $table->longText('autores');
             $table->foreignId('investigador_id')->constrained('investigadores')->onDelete('cascade');

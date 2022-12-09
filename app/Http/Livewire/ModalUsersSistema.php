@@ -15,7 +15,7 @@ class ModalUsersSistema extends Component
     protected $rules =[
         'usuario'=>'required|unique:logins,user|min:3|max:20',
         'password'=>'required|confirmed|min:6',
-        'tipoUser'=>'required'
+        'tipoUser'=>'required|exists:tipos_users,id'
     ];
     public function render()
     {
