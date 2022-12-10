@@ -1,5 +1,4 @@
 <div>
-    <h1 class="font-black text-3xl text-center pt-24">Completar la información del investigador</h1>
     <form class="flex items-center md:w-1/2 mx-auto mt-4">
         <div class="relative w-full">
             <input type="text" wire:model="buscar" id="apellido" wire:keydown.backspace="reoverInvestigadorSeleccionado"
@@ -10,7 +9,7 @@
                         class="bg-red-500 text-white my-2 rounded-lg text-sm p2 text-center">{{ $message }}</span>
                 </div>
             @enderror
-            <div class="shadow rounded px-3 pt-3 pb-0">
+            <div class="">
                 @if (!$piecked)
                     @foreach ($investigadores as $inves)
                         <div style="cursor: pointer;">

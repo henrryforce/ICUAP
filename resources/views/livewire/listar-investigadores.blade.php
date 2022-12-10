@@ -1,21 +1,19 @@
 <div>
     @foreach ($investigadores as $investigador)
         <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="{{ asset('img/escudo_logotipo_buap_page-0002.jpg') }}" alt="Inserte una imagen">
+            <img class="w-full ml-0" src="{{ asset('img/escudo_logotipo_buap_page-0002.jpg') }}" alt="Inserte una imagen">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ $investigador->nombres }} {{ $investigador->apellido_paterno }}
                     {{ $investigador->apellido_materno }}</div>
                     
                     @foreach ($correos as $correo)
                     @if ($correo->id == $investigador->correo_id)
-                         <a class="decoration-solid">Correo</a>
-                        <a>{{$correo->nombre}}</a>
+                         <p class="decoration-solid">Correo: {{$correo->nombre}}</p>
                     @endif                       
                     @endforeach    
                     @foreach ($centros as $centro)
                     @if ($centro->id == $investigador->centro_adscripcion_id)
-                         <a class="decoration-solid">Centro de adscripcion</a>
-                        <a>{{$centro->nombre}}</a>
+                         <p class="decoration-solid">Centro de adscripcion: {{$centro->nombre}}</p>
                     @endif                       
                     @endforeach            
             </div>

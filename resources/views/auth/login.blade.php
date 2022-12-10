@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('contenido')
-
+<div id="relleno-nav"></div>
       <div class="alert alert-danger w-50" role="alert">
         <h4 class="alert-heading">Ecosistema de Investigacion ICUAP</h4>
         <p class="mb-0">Este acceso es exclusivo para la administración del sitio, si no cuentas con las credenciales necesarias, deberas regresar a la pantalla de inicio.</p>
@@ -11,7 +11,7 @@
         <div class="card bg-light">
           <article class="card-body mx-auto" style="max-width: 400px;">
             <h4 class="card-title mt-3 text-center">Iniciar sesión</h4>
-            <p class="text-center">Este espacio es único y exclusivo para la administración de este sitio.</p>
+            <p class="text-center mb-3">Este espacio es único y exclusivo para la administración de este sitio.</p>
             <form method="POST" action="{{route('login')}}" novalidate>
               @csrf
               @if (session('mensaje'))

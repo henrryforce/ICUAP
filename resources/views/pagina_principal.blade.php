@@ -23,9 +23,10 @@
       <h1 class="section-title">Buscar</h1>
       <div class="card bg-light">
         <article class="card-body mx-auto" style="max-width: 400px;">
-          <h4 class="card-title mt-3 text-center">Buscar un investigador</h4>
+          <h1 class="card-title mt-3 text-center">Buscar un investigador</h1>
+          <p class="text-center">Ingresa el apellido del investigador <br> y selecciona una opción</p>
           <livewire:buscador-index />
-            {{-- <div class="input-group mb-3">
+            {{-- <div class="input-group mb-3 w-full">
               <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
               <input type="text" class="form-control" placeholder="Primer apellido" aria-label="Name" aria-describedby="basic-addon1">
               <input type="text" class="form-control" placeholder="Segundo apellido" aria-label="Name" aria-describedby="basic-addon1">
@@ -39,6 +40,20 @@
             </div> <!-- form-group// -->       --}}
         </article>
       </div>
+      <section id="contacto" class="contact section">
+    <div class="container">
+      <h2 class="section-title">Contactanos</h2>
+      <form class="contact-form box-shadow-1">
+        <input type="text" name="name" placeholder="Ingresa tu nombre *"
+          title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <input type="email" name="email" placeholder="Ingresa tu correo *" title="Email incorrecto"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <textarea name="comments" cols="50" rows="10" placeholder="Déjanos tus comentarios *" required></textarea>
+        <div class="contact-form-loader text-center none">
+          <img src=" assets/loader.svg" alt="Enviando...">
+        </div>
+        <input class="bg-[#003B5C] font-bold w-100 p-3 text-white rounded-lg mt-2 hover:rgba(0, 59, 92, 0.75) content-center" type="submit" value="ENVIAR MENSAJE">
+      </form>
       <article id="gracias" class="modal">
         <div class="modal-content">
           <article class="contact-form-response">
@@ -57,6 +72,8 @@
           </article>
         </div>
       </article>
+    </div>
+  </section>
     </div>
   </section>
 <div id="relleno"></div>
