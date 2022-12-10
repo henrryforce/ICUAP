@@ -1,7 +1,7 @@
 <div>
     @foreach ($investigadores as $investigador)
-        <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-            <img class="w-full ml-0" src="{{ asset('img/escudo_logotipo_buap_page-0002.jpg') }}" alt="Inserte una imagen">
+        <div class=" rounded overflow-hidden shadow-lg">
+            <img class="h-[280px] w-auto ml-0" src="{{ asset('img/logo_cards.png') }}" alt="Inserte una imagen">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ $investigador->nombres }} {{ $investigador->apellido_paterno }}
                     {{ $investigador->apellido_materno }}</div>
