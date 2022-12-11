@@ -11,6 +11,7 @@ use App\Http\Controllers\CompletarInvestigadores;
 use App\Http\Controllers\CrearInvertagorController;
 use App\Http\Controllers\ListadoInvestigadoresController;
 use App\Http\Controllers\PaginaListaUsuarios;
+use App\Http\Controllers\TestChart;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,4 @@ Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("r
 Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'index'])->name('investigadores');
 Route::post('/listado_investigadores', [ListadoInvestigadoresController::class,'index']);
 Route::get('/lista_usuarios', [PaginaListaUsuarios::class,'index'])->name('listaUsuarios');
+Route::get('/testchart',[TestChart::class,'index']);
