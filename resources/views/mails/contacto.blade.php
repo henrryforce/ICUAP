@@ -9,6 +9,7 @@
 <body>
     <h1>Contacto de {{$nombre}}</h1>
     <p>Correo de contacto</p><a>{{$correo}}</a>
+    <br>
     <a>Mensaje</a>
     <p>{{$mensaje}}</p>
 </body>
