@@ -11,6 +11,7 @@ use App\Http\Controllers\CompletarInvestigadores;
 use App\Http\Controllers\CrearInvertagorController;
 use App\Http\Controllers\ListadoInvestigadoresController;
 use App\Http\Controllers\PaginaListaUsuarios;
+use App\Http\Controllers\ResultadoBusquedaInvestigador;
 use App\Http\Controllers\TestChart;
 
 /*
@@ -33,7 +34,7 @@ Route::post('/administracion', [AdministracionController::class,'index']);
 
 Route::get('/administracion/investigador/completar', [CompletarInvestigadores::class,'index'])->name('completarInvestigador');
 Route::post('/requestTest', [CrearInvertagorController::class,'store'])->name("request");
-Route::get('/vista_usuarios', function () {return view('vista_usuarios');})->name('usuarios');
+Route::get('/vista_usuarios',[ResultadoBusquedaInvestigador::class,'index'])->name('resultadoBusquedaInvestigador');
 Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'index'])->name('investigadores');
 Route::post('/listado_investigadores', [ListadoInvestigadoresController::class,'index']);
 Route::get('/lista_usuarios', [PaginaListaUsuarios::class,'index'])->name('listaUsuarios');

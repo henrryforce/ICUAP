@@ -1,20 +1,34 @@
 @extends('layouts.app')
 {{-- vista para listar usuarios y administrar entre capturistas y administradores --}}
 
+@php
+                $data= session()->get('data');
+                $inves= $data[0];
+                $correo= $data[1];
+                $centro=$data[2];
+                $areas=$data[3];
+                $patentes=$data[4];
+                $articulos=$data[5];
+                $journals = $data[6];
+                
+                
+            @endphp
+            
 @section('contenido')
 <div id="relleno"></div>
 <div class="flex justify-center ">
     <div class=" rounded overflow-hidden shadow-lg">
         <img class="h-[280px] w-auto ml-0" src="{{ asset('img/logo_cards.png') }}" alt="Sunset in the mountains">
         <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Nombre de investigador*</div>
-            <p>Correo: correo@correo.com</p>
-            <p>Centro de adscripcion: Centro de Investigación en Dispositivos Semiconductores </p>
+            <div class="font-bold text-xl mb-2">Nombre de investigador:{{$inves->nombres}} {{$inves->apellido_paterno}} {{$inves->apellido_materno}}</div>
+            <p>Correo: {{$correo->nombre}}</p>
+            <p>Centro de adscripcion: {{$centro->nombre}} </p>
         </div>
         <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+            @foreach ($areas as $area)
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{{$area->nombre}}</span>
+            @endforeach
+            
         </div>
     </div>
 </div>
@@ -32,26 +46,41 @@
                     aria-controls="tabs-profile3" aria-selected="false">Patentes</a>
             </li>
         </ul>
+        {{-- Bloque de codigo para desplegar todas las patentes --}}
+        @foreach ($patentes as $patente)
         <div class="mx-5 my-5 bg-white shadow-md px-5 py-3 rounded-xl">
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">El Rol de la Detección Asistida por Computadora 
-                    en la Nueva Era de la Inteligencia Artificial </div>
-                <a class="decoration-solid">Juan Arturo Pérez-Cebreros, Eric Efraín Solano-Uscanga</a>
+                <div class="font-bold text-xl mb-2">{{$patente->titulo}}</div>
                 <div class="mt-2">
-                <a class="decoration-solid">Año de publicación: </a> <a>2015 </a>
+                <a class="decoration-solid">Año de publicación: </a> <a>{{$patente->year}} </a>
                 </div>
+                <a class="decoration-solid">{{$patente->resumen}}</a>
+                
+
             </div>
         </div>
+        @endforeach
+        {{-- bloque de codigo para desplegar los articulos de los Investigadores --}}
+        
+        @foreach ($articulos as $articulo)
         <div class="mx-5 my-5 bg-white shadow-md px-5 py-3 rounded-xl">
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Desarrollo de un software para la clasificación de malware y benignware en el sistema operativo Windows 
-                    mediante Redes Neuronales Recurrentes (RNR) </div>
-                <a class="decoration-solid">Luis Enrique León Hernández, Jesús Enrique Rivera Escovar</a>
+                @foreach ($journals as $journal)
+                    @if ($journal->id ==$articulo->journal_id)
+                    <div class="font-bold text-xl mb-2">{{$journal->nombre}} </div>
+                    @endif
+                @endforeach                
+                <a class="decoration-solid">Autores:{{$articulo->autores}}</a>
                 <div class="mt-2">
-                <a class="decoration-solid">Año de publicación: </a> <a>2021 </a>
+                <a class="decoration-solid">Año de publicación: </a> <a>{{$articulo->ano_publicacion}} </a>
                 </div>
+                <div class="mt-2">
+                    <a class="decoration-solid">Doi: </a> <a>{{$articulo->doi}} </a>
+                    </div>
             </div>
         </div>
+        @endforeach
+        
     </div>
 </div>
 </div>

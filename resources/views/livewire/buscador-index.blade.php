@@ -13,6 +13,7 @@
                 @if (!$piecked)
                     @foreach ($investigadores as $inves)
                         <div style="cursor: pointer;">
+                            
                             <a
                                 wire:click="verInvestigador('{{ $inves->id }}')">
                                 {{ $inves->nombres }} {{ $inves->apellido_paterno }} {{ $inves->apellido_materno }}

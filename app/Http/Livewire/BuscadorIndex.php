@@ -2,8 +2,15 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Controllers\ResultadoBusquedaInvestigador;
+use App\Models\Correo;
+use App\Models\Journal;
+use App\Models\Patente;
 use Livewire\Component;
+use App\Models\Articulo;
 use App\Models\Investigadore;
+use App\Models\Areas_interese;
+use App\Models\Centros_Adscripcion;
 
 class BuscadorIndex extends Component
 {
@@ -30,7 +37,14 @@ class BuscadorIndex extends Component
         }
     }
     public function verInvestigador($id){
-        dump($id);
+       $investigador= Investigadore::find((int)$id);
+       $correo = Correo::find((int) $investigador->correo_id);
+       $centro = Centros_Adscripcion::find((int) $investigador->centro_adscripcion_id);
+       $areas = Areas_interese::where('investigador_id',$investigador->id)->get();
+       $patentes = Patente::where('investigador_id',$investigador->id)->get();
+       $articulos = Articulo::where('investigador_id',$investigador->id)->get();
+       $journals = Journal::all();
+       return redirect()->route('resultadoBusquedaInvestigador')->with('data',[$investigador,$correo,$centro,$areas,$patentes,$articulos,$journals]);
     }
     public function reoverInvestigadorSeleccionado(){
         $this->piecked=false;
