@@ -31,7 +31,7 @@ CREATE TABLE `Areas_intereses` (
   PRIMARY KEY (`id`),
   KEY `areas_intereses_investigador_id_foreign` (`investigador_id`),
   CONSTRAINT `areas_intereses_investigador_id_foreign` FOREIGN KEY (`investigador_id`) REFERENCES `investigadores` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `Areas_intereses` (
 
 LOCK TABLES `Areas_intereses` WRITE;
 /*!40000 ALTER TABLE `Areas_intereses` DISABLE KEYS */;
-INSERT INTO `Areas_intereses` VALUES (1,'laravel',1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(2,'php',1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(3,'JS',1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(4,'laravel',2,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(5,'php',2,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(6,'JS',2,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(25,'basesdedatos',7,'2022-12-05 21:14:28','2022-12-05 21:14:28'),(26,'oracle',7,'2022-12-05 21:14:28','2022-12-05 21:14:28'),(27,'contabilidad',8,'2022-12-05 21:15:04','2022-12-05 21:15:04'),(28,'compaq',8,'2022-12-05 21:15:04','2022-12-05 21:15:04'),(29,'camaras',9,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(30,'soporte',9,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(31,'oddoo',9,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(32,'cosa',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(33,'as',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(34,'a',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(35,'sa',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(36,'s',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(37,'asasas',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(38,'sasasa',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(39,'sasas',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(40,'sa',11,'2022-12-05 21:22:32','2022-12-05 21:22:32');
+INSERT INTO `Areas_intereses` VALUES (1,'laravel',1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(2,'php',1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(3,'JS',1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(4,'laravel',2,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(5,'php',2,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(6,'JS',2,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(27,'contabilidad',8,'2022-12-05 21:15:04','2022-12-05 21:15:04'),(28,'compaq',8,'2022-12-05 21:15:04','2022-12-05 21:15:04'),(29,'camaras',9,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(30,'soporte',9,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(31,'oddoo',9,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(32,'cosa',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(33,'as',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(34,'a',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(35,'sa',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(36,'s',10,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(37,'asasas',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(38,'sasasa',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(39,'sasas',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(40,'sa',11,'2022-12-05 21:22:32','2022-12-05 21:22:32'),(44,'basesdedatos',7,'2022-12-12 00:37:18','2022-12-12 00:37:18'),(45,'oracle',7,'2022-12-12 00:37:18','2022-12-12 00:37:18'),(46,'algo',7,'2022-12-12 00:37:18','2022-12-12 00:37:18');
 /*!40000 ALTER TABLE `Areas_intereses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `Articulos` (
   KEY `articulos_journal_id_foreign` (`journal_id`),
   CONSTRAINT `articulos_investigador_id_foreign` FOREIGN KEY (`investigador_id`) REFERENCES `investigadores` (`id`) ON DELETE CASCADE,
   CONSTRAINT `articulos_journal_id_foreign` FOREIGN KEY (`journal_id`) REFERENCES `journals` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +75,7 @@ CREATE TABLE `Articulos` (
 
 LOCK TABLES `Articulos` WRITE;
 /*!40000 ALTER TABLE `Articulos` DISABLE KEYS */;
-INSERT INTO `Articulos` VALUES (1,'El articulo mayor',2022,'dsadas','dsadasd',1,11,'2022-12-09 03:24:46','2022-12-09 03:45:40');
+INSERT INTO `Articulos` VALUES (1,'El articulo mayor',2022,'dsadas','GERARDo,asdas,as',1,11,'2022-12-09 03:24:46','2022-12-09 04:01:59'),(3,'Otro articulo',2021,'http://localhost/administracion/investigador/completar#','Gerardo,DAniel;david',1,13,'2022-12-12 14:12:15','2022-12-12 14:12:15'),(4,'Redes neuronales convolucionales',2020,'http://localhost/administracion/investigador/completar#','Luis Enrique,Enrique Ribera,El otro ',1,14,'2022-12-12 14:13:15','2022-12-12 14:13:15'),(5,'Otro arti',2021,'http://localhost/testchart','GErardo,DAvid,Karina',1,15,'2022-12-12 14:41:51','2022-12-12 14:41:51');
 /*!40000 ALTER TABLE `Articulos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +127,7 @@ CREATE TABLE `correos` (
 
 LOCK TABLES `correos` WRITE;
 /*!40000 ALTER TABLE `correos` DISABLE KEYS */;
-INSERT INTO `correos` VALUES (2,'luis15ago98@gmail.com','2022-12-03 21:55:10','2022-12-03 21:55:10'),(3,'allan98@gmail.com','2022-12-03 21:55:40','2022-12-03 21:55:40'),(8,'gerardo@ibuap.com','2022-12-05 21:14:28','2022-12-05 21:14:28'),(9,'zorabel@ibuap.com','2022-12-05 21:15:04','2022-12-05 21:15:04'),(10,'karina@ibuap.com','2022-12-05 21:15:55','2022-12-05 21:15:55'),(11,'david@ibuap.com','2022-12-05 21:22:02','2022-12-05 21:22:02'),(12,'clara@ibuap.vom','2022-12-05 21:22:32','2022-12-05 21:22:32');
+INSERT INTO `correos` VALUES (2,'luis15ago98@gmail.com','2022-12-03 21:55:10','2022-12-03 21:55:10'),(3,'allan98@gmail.com','2022-12-03 21:55:40','2022-12-03 21:55:40'),(8,'gerardo@ipn.com','2022-12-05 21:14:28','2022-12-12 00:37:18'),(9,'zorabel@ibuap.com','2022-12-05 21:15:04','2022-12-05 21:15:04'),(10,'karina@ibuap.com','2022-12-05 21:15:55','2022-12-05 21:15:55'),(11,'david@ibuap.com','2022-12-05 21:22:02','2022-12-05 21:22:02'),(12,'clara@ibuap.vom','2022-12-05 21:22:32','2022-12-05 21:22:32');
 /*!40000 ALTER TABLE `correos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +161,7 @@ CREATE TABLE `investigadores` (
 
 LOCK TABLES `investigadores` WRITE;
 /*!40000 ALTER TABLE `investigadores` DISABLE KEYS */;
-INSERT INTO `investigadores` VALUES (1,'Luis Enrique','Leon','Hernandez',2,1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(2,'Allan Roberto','Leon','Hernandez',3,1,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(7,'Gerardo','Soto','Vega',8,3,'2022-12-05 21:14:28','2022-12-05 21:14:28'),(8,'Zorabel','Hernadnez','Salas',9,9,'2022-12-05 21:15:04','2022-12-05 21:15:04'),(9,'KArina','Colin','Sanchez',10,12,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(10,'David Alejandro','Ibarra','Lopez',11,3,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(11,'Clara Ambar','Rodriguez','calderon',12,7,'2022-12-05 21:22:32','2022-12-05 21:22:32');
+INSERT INTO `investigadores` VALUES (1,'Luis Enrique','Leon','Hernandez',2,1,'2022-12-03 21:55:10','2022-12-03 21:55:10'),(2,'Allan Roberto','Leon','Hernandez',3,1,'2022-12-03 21:55:40','2022-12-03 21:55:40'),(7,'Gerardo','Soto','Vega',8,7,'2022-12-05 21:14:28','2022-12-12 00:37:18'),(8,'Zorabel','Hernadnez','Salas',9,9,'2022-12-05 21:15:04','2022-12-05 21:15:04'),(9,'KArina','Colin','Sanchez',10,12,'2022-12-05 21:15:55','2022-12-05 21:15:55'),(10,'David Alejandro','Ibarra','Lopez',11,3,'2022-12-05 21:22:02','2022-12-05 21:22:02'),(11,'Clara Ambar','Rodriguez','calderon',12,7,'2022-12-05 21:22:32','2022-12-05 21:22:32');
 /*!40000 ALTER TABLE `investigadores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +178,7 @@ CREATE TABLE `journals` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +187,7 @@ CREATE TABLE `journals` (
 
 LOCK TABLES `journals` WRITE;
 /*!40000 ALTER TABLE `journals` DISABLE KEYS */;
-INSERT INTO `journals` VALUES (11,'The journal EBC','2022-12-09 03:24:46','2022-12-09 03:46:02');
+INSERT INTO `journals` VALUES (11,'The journal EBC','2022-12-09 03:24:46','2022-12-09 03:46:02'),(13,'Street Journal','2022-12-12 14:12:15','2022-12-12 14:12:15'),(14,'Seguridad Empresarial','2022-12-12 14:13:15','2022-12-12 14:13:15'),(15,'la revista','2022-12-12 14:41:51','2022-12-12 14:41:51');
 /*!40000 ALTER TABLE `journals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +218,7 @@ CREATE TABLE `logins` (
 
 LOCK TABLES `logins` WRITE;
 /*!40000 ALTER TABLE `logins` DISABLE KEYS */;
-INSERT INTO `logins` VALUES (4,'henrry','$2y$10$te97OBC17f0As0ou3Vggyu5J0z6jivB6.TI8IeFQFbBGDL0g4eQ1e','BX061lnnEtnye7XnKYP08hydm32Oi19WyVdONHvrCLq4KetVDsIR01APRZRG','2022-11-26 22:36:05','2022-11-26 22:36:05',1),(12,'gerardo','$2y$10$//kB4BUFknVbSeITPCWscOYCCnXgI9zzuUxb6z0nVN0UjNPzeoGLW',NULL,'2022-12-06 21:49:53','2022-12-06 23:18:28',2);
+INSERT INTO `logins` VALUES (4,'henrry','$2y$10$te97OBC17f0As0ou3Vggyu5J0z6jivB6.TI8IeFQFbBGDL0g4eQ1e','AhKc4doQnsLoUpNqqXvvenB6lhD0fRETtOTEnZ7WojBmL5ETAAjDuYiduoJV','2022-11-26 22:36:05','2022-11-26 22:36:05',1),(12,'gerardo','$2y$10$//kB4BUFknVbSeITPCWscOYCCnXgI9zzuUxb6z0nVN0UjNPzeoGLW',NULL,'2022-12-06 21:49:53','2022-12-06 23:18:28',2);
 /*!40000 ALTER TABLE `logins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,7 +265,7 @@ CREATE TABLE `patentes` (
   PRIMARY KEY (`id`),
   KEY `patentes_investigador_id_foreign` (`investigador_id`),
   CONSTRAINT `patentes_investigador_id_foreign` FOREIGN KEY (`investigador_id`) REFERENCES `investigadores` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,7 +274,7 @@ CREATE TABLE `patentes` (
 
 LOCK TABLES `patentes` WRITE;
 /*!40000 ALTER TABLE `patentes` DISABLE KEYS */;
-INSERT INTO `patentes` VALUES (1,'PAtente1','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi.','2022-12-16',1,'2022-12-06 00:42:28','2022-12-08 20:32:56'),(2,'patente1','los foreach-construcción es una declaración de flujo de control introducida en Java 1.5, lo que facilita la iteración de eleme','2022-12-10',1,'2022-12-06 00:47:30','2022-12-06 00:47:30'),(5,'pat3','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nis','2022-12-02',1,'2022-12-08 20:27:42','2022-12-08 20:59:17'),(6,'dssdsds','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi','2022-12-02',1,'2022-12-08 20:29:13','2022-12-08 20:29:13'),(7,'p4','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi.','2022-12-07',1,'2022-12-08 22:00:56','2022-12-08 22:01:55');
+INSERT INTO `patentes` VALUES (1,'PAtente1','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi.','2022-12-16',1,'2022-12-06 00:42:28','2022-12-08 20:32:56'),(2,'patente1','los foreach-construcción es una declaración de flujo de control introducida en Java 1.5, lo que facilita la iteración de eleme','2022-12-10',1,'2022-12-06 00:47:30','2022-12-06 00:47:30'),(5,'pat3','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nis','2022-12-02',1,'2022-12-08 20:27:42','2022-12-08 20:59:17'),(6,'dssdsds','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi','2022-12-02',1,'2022-12-08 20:29:13','2022-12-08 20:29:13'),(7,'p4','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis at risus et egestas. Sed ac ultrices tellus, et bibendum quam. Suspendisse elit urna, vestibulum eget luctus et, molestie id lectus. Etiam ut pellentesque eros, vitae laoreet diam. Cras eget lacinia dui, eget hendrerit arcu. Mauris ac auctor neque. Maecenas at tincidunt erat, id bibendum ipsum. Suspendisse leo risus, aliquam nec dictum eget, suscipit ut odio. Cras fermentum felis eget consectetur pellentesque. Donec lacus neque, fringilla in ligula id, hendrerit blandit nisi.','2022-12-07',1,'2022-12-08 22:00:56','2022-12-08 22:01:55'),(8,'patente Daniel','Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera','2017-08-15',10,'2022-12-12 15:04:46','2022-12-12 15:04:46');
 /*!40000 ALTER TABLE `patentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -400,4 +400,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-08 21:46:34
+-- Dump completed on 2022-12-12 13:11:06
