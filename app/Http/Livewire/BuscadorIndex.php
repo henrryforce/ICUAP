@@ -44,7 +44,7 @@ class BuscadorIndex extends Component
        $patentes = Patente::where('investigador_id',$investigador->id)->get();
        $articulos = Articulo::where('investigador_id',$investigador->id)->get();
        $journals = Journal::all();
-       return redirect()->route('resultadoBusquedaInvestigador')->with('data',[$investigador,$correo,$centro,$areas,$patentes,$articulos,$journals]);
+       return redirect()->route('resultadoBusquedaInvestigador')->with('data',[$investigador,$correo,$centro,$areas,$patentes,$articulos,$journals,$id]);
     }
     public function reoverInvestigadorSeleccionado(){
         $this->piecked=false;

@@ -11,7 +11,7 @@ class Patente extends Model
     protected $fillable = [
         'titulo',
         'resumen',
-        'year',
+        'anio_publicacion',
         'investigador_id'
     ];
     protected $table = 'patentes';

@@ -120,7 +120,7 @@
                                             <div class="font-bold text-xl mb-2">{{ $patente->titulo }}</div>
 
                                             <a class="decoration-solid">Fecha</a>
-                                            <a>{{ $patente->year }}</a>
+                                            <a>{{ $patente->anio_publicacion }}</a>
                                             </br>
                                             <a class="decoration-solid">Resumen</a>
                                             <p>{{ $patente->resumen }}</p>
@@ -131,7 +131,7 @@
                                                 class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#b9372d] rounded-full">Eliminar</button>
 
                                             <button type="button"
-                                                wire:click="editarPatente('{{ $patente->id }}','{{ $patente->titulo }}','{{ $patente->year }}','{{ $patente->resumen }}')"
+                                                wire:click="editarPatente('{{ $patente->id }}','{{ $patente->titulo }}','{{ $patente->anio_publicacion }}','{{ $patente->resumen }}')"
                                                 class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-[#003B5C] rounded-full ">Editar</button>
                                         </div>
                                     </div>

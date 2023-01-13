@@ -101,7 +101,7 @@ class BuscadorAgregarItems extends Component
         if($this->editarp){
            $findPat=Patente::find((int) $this->idPatente);
             $findPat->titulo=$this->pNombre;
-            $findPat->year=$this->pFecha;
+            $findPat->anio_publicacion=$this->pFecha;
             $findPat->resumen=trim($this->pResume);
             $findPat->save();
             session()->flash('message', 'Patente Editada con exito');

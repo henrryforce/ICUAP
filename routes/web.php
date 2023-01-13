@@ -8,6 +8,7 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\CompletarInvestigadores;
+use App\Http\Controllers\ConsultasCharts;
 use App\Http\Controllers\CrearInvertagorController;
 use App\Http\Controllers\ListadoInvestigadoresController;
 use App\Http\Controllers\PaginaListaUsuarios;
@@ -39,3 +40,5 @@ Route::get('/listado_investigadores', [ListadoInvestigadoresController::class,'i
 Route::post('/listado_investigadores', [ListadoInvestigadoresController::class,'index']);
 Route::get('/lista_usuarios', [PaginaListaUsuarios::class,'index'])->name('listaUsuarios');
 Route::get('/testchart',[TestChart::class,'index']);
+Route::get('/chart/patentes',[ConsultasCharts::class,'patentes'])->name('ConsultaPatentes');
+Route::get('/chart/articulos',[ConsultasCharts::class,'articulos'])->name('ConsultarArticulos');
