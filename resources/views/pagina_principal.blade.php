@@ -7,7 +7,7 @@
             style="--hero-image: url('/public/img/52527624876_6cb1d2dc82_o.jpg'); --attachment:fixed;">
             <aside class="hero-image-opacity" style="--hero-opacity-color: var(--black-alpha-color);">
                 <div class="container mx-auto flex flex-col items-center">
-                    <img src="{{ asset('img/image2.png') }}" class="object-fill h-[550px] w-auto ml-0 pb-8">
+                    <img src="{{ asset('img/image2.png') }}" class="md:h-[450px] object-fill h-[550px] w-auto ml-0 pb-8" >
                     <p class="hero-image-title" style="--hero-text-color: var(--white-color);">El Ecosistema ICUAP en el
                         marco de la ciencia abierta, tiene como objetivo </p>
                     <p class="hero-image-title" style="--hero-text-color: var(--white-color);">difundir los avances, las

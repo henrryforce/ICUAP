@@ -192,7 +192,7 @@ p {
 .hero-image {
   background-image: var(--hero-image);
   background-repeat: no-repeat;
-  background-size: 120%;
+  background-size: 345%;
   background-position: center;
   background-attachment: var(--hero-attachment);
 
@@ -301,45 +301,16 @@ p {
   .menu a:hover {
     background-color: transparent;
   }
+  .hero-image {
+    background-image: var(--hero-image);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center;
+    background-attachment: var(--hero-attachment);
+  }
  
 }
-/* ********** Modal ********** */
-/* .modal {
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--black-alpha-color);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 1s;
-}
 
-.modal-content {
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.modal-close svg {
-  width: 3rem;
-  height: 3rem;
-  fill: var(--first-color);
-}
-
-.modal[id|="trabajo"]:target {
-  opacity: 1;
-  pointer-events: auto;
-} */
 /* *********** Modal login *********************/
   .note{
     text-align: center;
@@ -708,9 +679,9 @@ background-color: var(--first-color);
   flex-direction: row;
   color: var(--white-color);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
-  padding-right: 150px;
+  /* padding-right: 150px; */
 
 }
 .logo a:hover{
@@ -852,6 +823,10 @@ background-color: var(--first-color);
   }
   .logo a{
     font-size: 37px;
+  }
+  .object-fill{
+    height: 450px;
+    width: auto;
   }
 }
 
