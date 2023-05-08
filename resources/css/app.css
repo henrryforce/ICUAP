@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities; 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+@font-face {
+  font-family: Gotham-Black;
+  src: url(/public/fonts/gotham/GOTHAM-BLACK.TTF);
+}
  
 /* ********** Custom Properties ********** */
 :root {
@@ -18,14 +23,14 @@
   --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
-  --font: "Source Sans Pro";
+  font-family: 'Lato', sans-serif;
   --max-width: 1200px;
   --header-height: 6rem;
 }
 /* ********** Reset ********** */
 html {
   box-sizing: border-box;
-  font-family: var(--font);
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -86,7 +91,7 @@ h6 {
 img {
   max-width: 100%;
   height: auto;
-  margin-left: 20px;
+  width: auto;
 }
 
 p {
@@ -97,6 +102,11 @@ p {
 }
 #relleno-nav{
   height: 1rem;
+}
+.cabecera{
+  display: inline-flex;
+  width: 95%;
+  height: 100%;
 }
 
 
@@ -118,7 +128,7 @@ p {
 .contact-form input,
 .contact-form textarea {
   font-size: 0.85rem;
-  font-family: var(--font);
+  font-family: 'Lato', sans-serif;
 }
 
 .contact-form input {
@@ -200,7 +210,7 @@ p {
 
 .hero-image-opacity {
   width: 100%;
-  min-height: 100vh;
+  min-height: 68vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,6 +225,11 @@ p {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+.img_buap{
+  margin-top: 50px;
+  height: auto;
+  width: 60%;
 }
 
 
@@ -247,6 +262,7 @@ p {
 .menu.is-active {
   opacity: 1;
   pointer-events: auto;
+  align-items: center;
 }
 
 .menu a {
@@ -276,6 +292,15 @@ p {
 }
 
 @media screen and (min-width: 1024px) {
+  
+  .cabecera{
+    max-width: 1024px;
+    display: inline-flex;
+    flex-direction: row;
+  }
+  .logo{
+    display: block;
+  }
   .menu-btn {
     display: none;
   }
@@ -286,7 +311,6 @@ p {
     flex-direction: row;
     opacity: 1;
     pointer-events: auto;
-    margin-left: 6.3rem;
   }
 
   .menu a {
@@ -652,7 +676,6 @@ background-color: var(--first-color);
   left: 0;
   bottom: 0;
   z-index: 999;
-  padding: 1rem;
   width: 100%;
   height: var(--header-height);
   background-color: var(--first-color);
@@ -670,7 +693,8 @@ background-color: var(--first-color);
   font-size: 200rem;    
 }
 .logo img{
-  margin-right: 30px;
+  margin-top: -12px;
+  margin-right: 8px;
 }
 .logo a {
   display: flex;
@@ -679,9 +703,8 @@ background-color: var(--first-color);
   flex-direction: row;
   color: var(--white-color);
   font-weight: bold;
-  font-size: 17px;
+  font-size: 19px;
   text-decoration: none;
-  /* padding-right: 150px; */
 
 }
 .logo a:hover{
@@ -831,6 +854,14 @@ background-color: var(--first-color);
 }
 
 @media screen and (min-width: 1024px) {
+  img{
+    height: auto;
+  }
+  .img_buap{
+    margin-top: 32px;
+    height: auto;
+    width: 43%;
+  }
   .buscador {
     display: block;
     grid-template-columns: repeat(2, 30%);
@@ -868,9 +899,19 @@ background-color: var(--first-color);
   .services .section-title {
     grid-column: span 3;
   }
-  
+  .logo{
+    display: block;
+  }
   .logo a{
-    font-size: 50px;
+    font-size: 40px;
+  }
+  .menu a:hover {
+    color: #FF8C00;
+    background-color: var(--first-color);
+  }
+  .menu button:hover {
+    color: #FF8C00;
+    background-color: var(--first-color);
   }
   .alert-danger{
     margin-left: 30rem;

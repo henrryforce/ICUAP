@@ -22,7 +22,7 @@
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Nombre de investigador:{{$inves->nombres}} {{$inves->apellido_paterno}} {{$inves->apellido_materno}}</div>
             <p>Correo: {{$correo->nombre}}</p>
-            <p>Centro de adscripcion: {{$centro->nombre}} </p>
+            <p>Ubicación: {{$centro->nombre}} </p>
         </div>
         <div class="px-6 pt-4 pb-2">
             @foreach ($areas as $area)
@@ -36,56 +36,92 @@
 </div>
 
 <div class="container max-w-[50rem]">
-<div class="flex justify-center pt-20">
-    <div class=" rounded overflow-hidden shadow-lg">
-        <ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab3"role="tablist">
-            <li class="nav-item" role="presentation">
-                <a href="#tabs-home3" class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active " id="tabs-home-tab3" data-bs-toggle="pill" data-bs-target="#tabs-home3" role="tab" aria-controls="tabs-home3"
-                    aria-selected="true">Articulos</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a href="#tabs-profile3" class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent
-                    px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent" id="tabs-profile-tab3" data-bs-toggle="pill" data-bs-target="#tabs-profile3" role="tab"
-                    aria-controls="tabs-profile3" aria-selected="false">Patentes</a>
-            </li>
-        </ul>
-        {{-- Bloque de codigo para desplegar todas las patentes --}}
-        @foreach ($patentes as $patente)
-        <div class="mx-5 my-5 bg-white shadow-md px-5 py-3 rounded-xl">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{$patente->titulo}}</div>
-                <div class="mt-2">
-                <a class="decoration-solid">Año de publicación: </a> <a>{{$patente->anio_publicacion}} </a>
-                </div>
-                <a class="decoration-solid">{{$patente->resumen}}</a>
+    <div class="flex justify-center pt-20">
+        <div class=" rounded overflow-hidden shadow-lg">
+            <ul 
+            class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" 
+            id="tabs-tab3"
+            role="tablist"
+            data-te-nav-ref>
+                <li role="presentation">
+                    <a 
+                        href="#myPatente" 
+                        class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active " 
+                        id="tabs-myPatente-tab3" 
+                        data-te-toggle="pill" 
+                        data-te-target="#myPatente" 
+                        role="tab" 
+                        aria-controls="myPatente"
+                        aria-selected="true">Patente
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a 
+                        href="#myArticle" 
+                        class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent" 
+                        id="tabs-myArticle-tab3" 
+                        data-te-toggle="pill" 
+                        data-te-target="#myArticle" 
+                        role="tab"
+                        aria-controls="myArticle" 
+                        aria-selected="false">Artículos
+                    </a>
+                </li>
                 
-
-            </div>
-        </div>
-        @endforeach
-        {{-- bloque de codigo para desplegar los articulos de los Investigadores --}}
-        
-        @foreach ($articulos as $articulo)
-        <div class="mx-5 my-5 bg-white shadow-md px-5 py-3 rounded-xl">
-            <div class="px-6 py-4">
-                @foreach ($journals as $journal)
-                    @if ($journal->id ==$articulo->journal_id)
-                    <div class="font-bold text-xl mb-2">{{$journal->nombre}} </div>
-                    @endif
-                @endforeach                
-                <a class="decoration-solid">Autores:{{$articulo->autores}}</a>
-                <div class="mt-2">
-                <a class="decoration-solid">Año de publicación: </a> <a>{{$articulo->ano_publicacion}} </a>
-                </div>
-                <div class="mt-2">
-                    <a class="decoration-solid">Doi: </a> <a>{{$articulo->doi}} </a>
+                {{-- Bloque de codigo para desplegar todas las patentes --}}
+                <div id="myTabContent">
+                    <div 
+                        id="myPatente"
+                        role="tabpanel"
+                        data-te-tab-active
+                        aria-labelledby="tabs-myPatente-tab3">
+                        @foreach ($patentes as $patente)
+                        <div class="mx-5 my-5 bg-white shadow-md px-5 py-3 rounded-xl">
+                            <div class="px-6 py-4">
+                                <div class="font-bold text-xl mb-2">{{$patente->titulo}}</div>
+                                <div class="mt-2">
+                                <a class="decoration-solid">Año de publicación: </a> <a>{{$patente->anio_publicacion}} </a>
+                                </div>
+                                <a class="decoration-solid">{{$patente->resumen}}</a>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
-            </div>
         </div>
-        @endforeach
-        
     </div>
 </div>
+<div class="container max-w-[50rem]">
+    <div class="flex justify-center pt-20">
+        <div class=" rounded overflow-hidden shadow-lg">
+                    {{-- bloque de codigo para desplegar los articulos de los Investigadores --}}
+                    <div 
+                        id="myArticle"
+                        role="tabpanel"
+                        data-te-tab-active
+                        aria-labelledby="tabs-myArticle-tab3">
+                        @foreach ($articulos as $articulo)
+                        <div class="mx-5 my-5 bg-white shadow-md px-5 py-3 rounded-xl">
+                            <div class="px-6 py-4">
+                                @foreach ($journals as $journal)
+                                    @if ($journal->id ==$articulo->journal_id)
+                                    <div class="font-bold text-xl mb-2">{{$journal->nombre}} </div>
+                                    @endif
+                                @endforeach                
+                                <a class="decoration-solid">Autores:{{$articulo->autores}}</a>
+                                <div class="mt-2">
+                                <a class="decoration-solid">Año de publicación: </a> <a>{{$articulo->ano_publicacion}} </a>
+                                </div>
+                                <div class="mt-2">
+                                    <a class="decoration-solid">DOI: </a> <a>{{$articulo->doi}} </a>
+                                    </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
 </div>
 
 
@@ -104,14 +140,14 @@
                 text: 'Patentes'
             },
             subtitle: {
-                text: 'Source: positronx.io'
+                text: ''
             },
             xAxis: {
                 categories: anios
             },
             yAxis: {
                 title: {
-                    text: 'Number of New Users'
+                    text: 'Número'
                 }
             },
             legend: {
@@ -125,8 +161,10 @@
                 }
             },
             series: [{
-                name: 'Numero de patentes',
+                name: 'Patentes',
+                color:"#FF00FF",
                 data: totalP //aqui se necesitan los count de los articulos o patentes por año o algo para que se grafique 
+                
             }],
             responsive: {
                 rules: [{
@@ -157,17 +195,17 @@
         
         Highcharts.chart('container', {
             title: {
-                text: 'Articulos'
+                text: 'Artículos'
             },
             subtitle: {
-                text: 'Source: positronx.io'
+                text: ''
             },
             xAxis: {
                 categories: years
             },
             yAxis: {
                 title: {
-                    text: 'Number of New Users'
+                    text: 'Número'
                 }
             },
             legend: {
@@ -181,7 +219,8 @@
                 }
             },
             series: [{
-                name: 'New Users',
+                name: 'Artículos',
+                color:"#77dd77",
                 data: totales //aqui se necesitan los count de los articulos o patentes por año o algo para que se grafique 
             }],
             responsive: {

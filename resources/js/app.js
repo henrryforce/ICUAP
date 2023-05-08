@@ -19,3 +19,4 @@ import './bootstrap'
         $menu.classList.remove('is-active')
     })
 })(document)
+

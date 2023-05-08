@@ -9,40 +9,43 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
         <title>ICUAP</title>
+
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
         @livewireStyles
 </head>
 <body >	
   <header class="header">	
-    <section class="contenedor">	
-      <div class="logo">	
-        <img src="{{asset('img/image 2.svg')}}" alt="Logo Minerva">
-        <a href="#inicio" class="">ECOSISTEMA DE INVESTIGACIÓN ICUAP</a>	
-        <button class="menu-btn">	
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">	
-            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />	
-          </svg>	
-          <svg class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">	
-            <path	
-              d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z" />	
-          </svg>	
-        </button>	
+    <section class="contenedor">
+      <div class="cabecera">
+        <img src="{{asset('img/icon_minerva.svg')}}" alt="Logo Minerva">
+        <div class="logo">	
+          <a href="#inicio" class="">ECOSISTEMA DE INVESTIGACIÓN ICUAP</a>	
+          <button class="menu-btn">	
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">	
+              <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />	
+            </svg>	
+            <svg class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">	
+              <path	
+                d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z" />	
+            </svg>	
+          </button>	
+          <form method="POST" action="{{route('logout')}}">
+            <nav class="menu">	
+              <a href="{{route('index')}}">Inicio</a>
+              <a href="#contacto">Contacto</a>	
+              @guest
+                <a href="{{route('login')}}">Iniciar sesión</a>	
+              @endguest
+              @auth
+              <a href="{{route('administracion')}}">Panel de administración</a>
+                @csrf
+                <button type="submit"><a>Cerrar sesión</a></button>
+              @endauth
+            </nav>
+          </form>
+        </div>
       </div>
-      <form method="POST" action="{{route('logout')}}">
-        <nav class="menu">	
-          <a href="{{route('index')}}">Inicio</a>
-          <a href="#contacto">Contacto</a>	
-          @guest
-            <a href="{{route('login')}}">Iniciar sesión</a>	
-          @endguest
-          @auth
-          <a href="{{route('administracion')}}">Panel de administración</a>
-            @csrf
-            <button type="submit"><a>Cerrar sesión</a></button>
-          @endauth
-        </nav>
-      </form>
     </section>
   </header>
     @yield('contenido')

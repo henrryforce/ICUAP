@@ -26,7 +26,7 @@
         },
         yAxis: {
             title: {
-                text: 'Number of New Users'
+                text: 'Perro'
             }
         },
         legend: {
@@ -82,7 +82,7 @@
         },
         yAxis: {
             title: {
-                text: 'Number of New Users'
+                text: ' perros'
             }
         },
         legend: {
@@ -96,7 +96,7 @@
             }
         },
         series: [{
-            name: 'New Users',
+            name: 'New Articulos',
             data: totales //aqui se necesitan los count de los articulos o patentes por año o algo para que se grafique 
         }],
         responsive: {
