@@ -21,7 +21,7 @@
         <img class="h-[280px] w-auto ml-0" src="{{ asset('img/logo_cards.png') }}" alt="Sunset in the mountains">
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Nombre de investigador:{{$inves->nombres}} {{$inves->apellido_paterno}} {{$inves->apellido_materno}}</div>
-            <p>Correo: {{$correo->nombre}}</p>
+            <p>Correo: {{$correo->correo}}</p>
             <p>Ubicación: {{$centro->nombre}} </p>
         </div>
         <div class="px-6 pt-4 pb-2">
