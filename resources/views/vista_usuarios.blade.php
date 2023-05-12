@@ -104,7 +104,8 @@
                             <div class="px-6 py-4">
                                 @foreach ($journals as $journal)
                                     @if ($journal->id ==$articulo->journal_id)
-                                    <div class="font-bold text-xl mb-2">{{$journal->nombre}} </div>
+                                    <div class="font-bold text-xl mb-2">{{$articulo->nombre}} </div>
+                                    <div class=" text-xl mb-2">{{$journal->nombre}} </div>
                                     @endif
                                 @endforeach                
                                 <a class="decoration-solid">Autores:{{$articulo->autores}}</a>
@@ -127,7 +128,8 @@
 
 
     <div id="relleno"></div>
-    <script type="text/javascript">
+    @if (sizeof($patentesChart) !=0)
+        <script type="text/javascript">
         var patentesChart = <?php echo json_encode($patentesChart)?>;
         anios=[];
         totalP=[];
@@ -182,6 +184,9 @@
             }
         });
     </script>
+    @endif
+    
+    @if (sizeof($articulosChart) !=0)
     <script type="text/javascript">
         var articulosChart = <?php echo json_encode($articulosChart)?>;
         
@@ -240,6 +245,8 @@
         });
         
     </script>
+    @endif
+    
 @endsection
 
 
